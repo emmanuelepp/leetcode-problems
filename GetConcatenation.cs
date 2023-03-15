@@ -1,3 +1,5 @@
+//O(n)
+//O(n)
 public class Solution
 {
     public int[] GetConcatenation(int[] nums)

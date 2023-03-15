@@ -1,4 +1,5 @@
 //O(n)
+//O(1)
 public class Solution
 {
     public void ReverseString(char[] s)
