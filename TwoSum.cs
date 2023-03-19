@@ -14,6 +14,6 @@ public class Solution
             dict[nums[i]] = i;
         }
 
-        return null;
+        return new int[] { };
     }
 }
