@@ -5,7 +5,6 @@ public class Solution
     public int[] GetConcatenation(int[] nums)
     {
         if (nums == null) return new int[] { };
-
         int[] arr = new int[] { };
 
         for (int i = 0; i < nums.Length; i++)

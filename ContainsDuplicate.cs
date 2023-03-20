@@ -2,13 +2,13 @@ using System.Collections;
 
 public class Solution
 {
-    //Space: O(n)
-    //Time: O(n)
+    //O(n)
+    //O(n)
     public bool ContainsDuplicate(int[] nums)
     {
         if (nums.Length <= 1) return false;
-
         var hashSet = new HashSet<int>();
+
         foreach (var item in nums)
         {
             if (hashSet.Contains(item))
@@ -20,7 +20,7 @@ public class Solution
                 hashSet.Add(item);
             }
         }
-
+        
         return false;
     }
 }

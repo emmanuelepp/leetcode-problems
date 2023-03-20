@@ -5,7 +5,6 @@ public class Solution
     public bool ThreeConsecutiveOdds(int[] arr)
     {
         if (arr.Length <= 0 && arr == null) return false;
-
         int odd = 0;
 
         for (int i = 0; i < arr.Length; i++)

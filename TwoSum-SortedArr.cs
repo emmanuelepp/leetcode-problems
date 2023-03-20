@@ -6,7 +6,6 @@ public class Solution
     {
 
         if (numbers == null || numbers.Length <= 0) return new int[] { };
-
         int L = 0, R = numbers.Length - 1;
 
         while (L < R)
