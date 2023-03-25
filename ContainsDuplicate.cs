@@ -1,5 +1,3 @@
-using System.Collections;
-
 public class Solution
 {
     //O(n)
@@ -20,7 +18,7 @@ public class Solution
                 hashSet.Add(item);
             }
         }
-        
+
         return false;
     }
 }
