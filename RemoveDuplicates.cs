@@ -1,17 +1,16 @@
 //O(n)
-//O(n)
+//O(1)
 public class Solution
 {
     public int RemoveDuplicates(int[] nums)
     {
-        var dict = new Dictionary<int, bool>();
-        var count = 0;
+        if (nums.Length == 0) return 0;
 
-        for (int i = 0; i < nums.Length; i++)
+        int count = 1;
+        for (int i = 1; i < nums.Length; i++)
         {
-            if (!dict.ContainsKey(nums[i]))
+            if (nums[i] != nums[i - 1])
             {
-                dict.Add(nums[i], true);
                 nums[count] = nums[i];
                 count++;
             }
@@ -19,4 +18,5 @@ public class Solution
 
         return count;
     }
+
 }
