@@ -1,5 +1,5 @@
 //O(n)
-//O(1)
+//O(n)
 
 using System.Collections;
 
