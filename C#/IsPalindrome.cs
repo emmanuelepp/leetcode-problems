@@ -1,19 +1,28 @@
-using System.Text.RegularExpressions;
 
+using System.Text;
 //O(n)
 //O(n)
 public class Solution
 {
     public bool IsPalindrome(string s)
     {
-        if (s == null || string.IsNullOrEmpty(s)) return false;
-        var regex = new Regex("[^a-zA-Z0-9]");
-        s = regex.Replace(s.ToLower(), "");
-        int L = 0, R = s.Length - 1;
-        
+        if (string.IsNullOrEmpty(s)) return false;
+
+        var cleanedString = new StringBuilder();
+
+        foreach (char c in s)
+        {
+            if (char.IsLetterOrDigit(c))
+                cleanedString.Append(char.ToLower(c));
+        }
+
+        string cleaned = cleanedString.ToString();
+
+        int L = 0, R = cleaned.Length - 1;
+
         while (L < R)
         {
-            if (s[L] == s[R])
+            if (cleaned[L] == cleaned[R])
             {
                 L++;
                 R--;
