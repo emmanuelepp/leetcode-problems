@@ -4,15 +4,17 @@ public class Solution
 {
     public int SingleNumber(int[] nums)
     {
-        if (nums.Length == 1) return nums[0];
-        var dict = new Dictionary<int, int>();
-
-        for (int i = 0; i < nums.Length; i++)
+        public int SingleNumber(int[] nums)
         {
-            if (!dict.ContainsKey(nums[i])) dict[nums[i]] = i;
-            else dict.Remove(nums[i]);
-        }
+            if (nums.Length <= 0) return -1;
 
-        return dict.Keys.First();
+            var result = 0;
+
+            foreach (var item in nums)
+            {
+                result ^= item;
+            }
+            return result;
+        }
     }
 }
