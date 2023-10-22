@@ -1,5 +1,3 @@
-
-using System.Text;
 //O(n)
 //O(n)
 public class Solution
@@ -8,29 +6,23 @@ public class Solution
     {
         if (string.IsNullOrEmpty(s)) return false;
 
-        var cleanedString = new StringBuilder();
+        var cleanString = new StringBuilder();
 
-        foreach (char c in s)
+        foreach (char item in s)
         {
-            if (char.IsLetterOrDigit(c))
-                cleanedString.Append(char.ToLower(c));
+            if (char.IsLetterOrDigit(item))
+                cleanString.Append(char.ToLower(item));
         }
 
-        string cleaned = cleanedString.ToString();
+        var cleaned = cleanString.ToString();
 
         int L = 0, R = cleaned.Length - 1;
 
         while (L < R)
         {
-            if (cleaned[L] == cleaned[R])
-            {
-                L++;
-                R--;
-            }
-            else
-            {
-                return false;
-            }
+            if (cleaned[L] != cleaned[R]) return false;
+            L++;
+            R--;
         }
 
         return true;
