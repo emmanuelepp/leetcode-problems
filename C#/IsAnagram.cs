@@ -1,21 +1,24 @@
 //O(n)
-//O(n)
+//O(1)
 public class Solution
 {
     public bool IsAnagram(string s, string t)
     {
         if (s.Length != t.Length) return false;
-        var dict = new Dictionary<char, int>();
-        
+
+        int[] charCount = new int[256];
+
         for (int i = 0; i < s.Length; i++)
         {
-            dict.TryAdd(s[i], 0);
-            dict.TryAdd(t[i], 0);
-
-            dict[s[i]]++;
-            dict[t[i]]--;
+            charCount[s[i]]++;
+            charCount[t[i]]--;
         }
 
-        return dict.Values.All(x => x == 0);
+        foreach (int count in charCount)
+        {
+            if (count != 0) return false;
+        }
+
+        return true;
     }
 }
