@@ -4,19 +4,14 @@ public class Solution
     //O(n)
     public bool ContainsDuplicate(int[] nums)
     {
-        if (nums.Length <= 1) return false;
-        var hashSet = new HashSet<int>();
+        if (nums.Length <= 0) return false;
+
+        var dict = new Dictionary<int, int>();
 
         foreach (var item in nums)
         {
-            if (hashSet.Contains(item))
-            {
-                return true;
-            }
-            else
-            {
-                hashSet.Add(item);
-            }
+            if (dict.ContainsKey(item)) return true;
+            dict.TryAdd(item, 0);
         }
 
         return false;
