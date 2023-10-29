@@ -1,5 +1,5 @@
 //O(nlogn)
-//O(logn)
+//O(ln)
 public class Solution
 {
     public void SortColors(int[] nums)
