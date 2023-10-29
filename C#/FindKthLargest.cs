@@ -3,26 +3,26 @@
 
 public class Solution
 {
-    public int FindKthLargest(int[] nums, int k)
+    public int FindKthlargest(int[] nums, int k)
     {
-        return QuickSelect(nums, 0, nums.Length - 1, nums.Length - k);
+        return QuickSelect(nums, 0, nums.length - 1, nums.length - k);
     }
 
-    private static int QuickSelect(int[] nums, int L, int R, int k)
+    private static int QuickSelect(int[] nums, int l, int r, int k)
     {
-        int p = Partition(nums, L, R);
+        int p = Partition(nums, l, r);
 
-        if (p > k) return QuickSelect(nums, L, p - 1, k);
-        else if (p < k) return QuickSelect(nums, p + 1, R, k);
+        if (p > k) return QuickSelect(nums, l, p - 1, k);
+        else if (p < k) return QuickSelect(nums, p + 1, r, k);
         else return nums[p];
     }
 
-    private static int Partition(int[] nums, int L, int R)
+    private static int Partition(int[] nums, int l, int r)
     {
-        int pivot = nums[R];
-        int i = L;
+        int pivot = nums[r];
+        int i = l;
 
-        for (int j = L; j < R; j++)
+        for (int j = l; j < r; j++)
         {
             if (nums[j] <= pivot)
             {
@@ -30,7 +30,7 @@ public class Solution
                 i++;
             }
         }
-        (nums[i], nums[R]) = (nums[R], nums[i]);
+        (nums[i], nums[r]) = (nums[r], nums[i]);
 
         return i;
     }
