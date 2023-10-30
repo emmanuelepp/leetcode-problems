@@ -1,5 +1,5 @@
 //O(n)
-//O(1)
+//O(n)
 public class Solution
 {
     public bool ContainsDuplicate(int[] nums)
