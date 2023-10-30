@@ -1,19 +1,14 @@
+//O(n)
+//O(1)
 public class Solution
 {
-    //O(n)
-    //O(n)
     public bool ContainsDuplicate(int[] nums)
     {
-        if (nums.Length <= 0) return false;
 
-        var dict = new Dictionary<int, int>();
+        if (nums.Length == 0) return false;
 
-        foreach (var item in nums)
-        {
-            if (dict.ContainsKey(item)) return true;
-            dict.TryAdd(item, 0);
-        }
+        var set = new HashSet<int>(nums);
 
-        return false;
+        return nums.Length > set.Count ? true : false;
     }
 }
