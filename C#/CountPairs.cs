@@ -6,15 +6,20 @@ public class Solution
     {
 
         if (nums.Count == 0) return 0;
-
+        int L = 0, R = nums.Count - 1;
+        var sortedNums = nums.OrderBy(n => n).ToList();
         var count = 0;
 
-        for (int i = 0; i < nums.Count; i++)
+        while (L < R)
         {
-            for (int j = i + 1; j < nums.Count; j++)
+            if (sortedNums[L] + sortedNums[R] < target)
             {
-                if (nums[i] + nums[j] < target)
-                    count++;
+                count += R - L;
+                L++;
+            }
+            else
+            {
+                R--;
             }
         }
 
