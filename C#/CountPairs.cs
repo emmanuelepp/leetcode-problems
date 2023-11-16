@@ -1,4 +1,4 @@
-//O(n^2)
+//O(n log n)
 //O(n)
 public class Solution
 {
