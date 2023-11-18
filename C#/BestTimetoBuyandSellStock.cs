@@ -9,7 +9,7 @@ public class Solution
         int maxProfit = 0;
         int minPrice = prices[0];
 
-        for (int i = 0; i < prices.Length; i++)
+        for (int i = 1; i < prices.Length; i++)
         {
             if (prices[i] < minPrice)
             {
@@ -23,6 +23,7 @@ public class Solution
                 maxProfit = posibleProfit;
             }
         }
+
 
         return maxProfit;
     }
