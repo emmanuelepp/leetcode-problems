@@ -4,6 +4,7 @@ public class Solution
 {
     public int CountElements(int[] arr)
     {
+        if (arr.Length == 0) return -1;
 
         var set = new HashSet<int>(arr);
         var count = 0;
