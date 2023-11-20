@@ -4,6 +4,7 @@ public class Solution
 {
     public int LargestUniqueNumber(int[] nums)
     {
+        if (nums.Length == 0) return -1;
 
         int maxInt = -1;
 
