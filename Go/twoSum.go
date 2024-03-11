@@ -1,5 +1,7 @@
 package main
 
+//O(N)
+//O(N)
 func twoSum(nums []int, target int) []int {
 	if len(nums) <= 0 {
 		return []int{}
