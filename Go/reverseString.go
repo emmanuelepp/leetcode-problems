@@ -1,5 +1,7 @@
 package main
 
+//O(N)
+//O(1)
 func reverseString(s []byte) {
 	if len(s) == 0 {
 		return
