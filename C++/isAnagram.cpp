@@ -1,5 +1,5 @@
 // Time: O(N)
-// Space: O(N)
+// Space: O(1)
 
 #include <string>
 #include <unordered_map>
@@ -9,6 +9,8 @@ class Solution
 public:
     bool isAnagram(std::string s, std::string t)
     {
+        if (s.size() != t.size())
+            return false;
 
         std::unordered_map<char, int> word1;
         std::unordered_map<char, int> word2;
