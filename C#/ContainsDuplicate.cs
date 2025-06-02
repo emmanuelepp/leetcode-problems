@@ -4,11 +4,16 @@ public class Solution
 {
     public bool ContainsDuplicate(int[] nums)
     {
-
         if (nums.Length == 0) return false;
 
-        var set = new HashSet<int>(nums);
+        var hashSet = new HashSet<int>();
 
-        return nums.Length > set.Count ? true : false;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (hashSet.Contains(nums[i])) return true;
+            else hashSet.Add(nums[i]);
+        }
+
+        return false;
     }
 }
