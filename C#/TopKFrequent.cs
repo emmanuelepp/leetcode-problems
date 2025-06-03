@@ -1,4 +1,4 @@
-//O(n * k)
+//O(n log n)
 //O(n)
 public class Solution
 {
@@ -7,37 +7,22 @@ public class Solution
 
         if (nums.Length == 0) return new int[] { };
 
-        var dict = new Dictionary<int, int>();
+        var result = new List<int>();
+        var freq = new Dictionary<int, int>();
 
         for (int i = 0; i < nums.Length; i++)
         {
-            if (!dict.ContainsKey(nums[i]))
-                dict[nums[i]] = 1;
-            else
-                dict[nums[i]]++;
+            if (freq.ContainsKey(nums[i])) freq[nums[i]]++;
+            else freq[nums[i]] = 1;
         }
 
-        var mostFrecuentElements = new List<int>();
+        var ordered = freq.OrderByDescending(pair => pair.Value).ToList();
 
-        while (k > 0)
+        for (int i = 0; i < k; i++)
         {
-            int maxFreq = -1;
-            int number = -1;
-
-            foreach (var item in dict)
-            {
-                if (item.Value > maxFreq)
-                {
-                    maxFreq = item.Value;
-                    number = item.Key;
-                }
-            }
-
-            mostFrecuentElements.Add(number);
-            dict.Remove(number);
-            k--;
+            result.Add(ordered[i].Key);
         }
 
-        return mostFrecuentElements.ToArray();
+        return result.ToArray();
     }
 }
