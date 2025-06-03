@@ -1,6 +1,8 @@
 //O(n)
 //O(n)
 
+// Use length#string encoding to avoid delimiter ambiguity.
+
 public class Solution
 {
     public string Encode(IList<string> strs)
